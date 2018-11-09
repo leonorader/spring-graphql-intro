@@ -1,6 +1,7 @@
 package intro.entities;
 
 import intro.enums.Genre;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,7 +25,7 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private Genre genre;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Author author;
 
     public Book(String title, String isbn, Genre genre, Author author) {

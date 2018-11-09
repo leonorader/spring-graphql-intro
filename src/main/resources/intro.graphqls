@@ -1,6 +1,9 @@
 type Query {
     pets: [Pet]
+    books: [Book]
 }
+
+# ---- pets ----
 
 type Pet {
     id: Int!
@@ -14,4 +17,39 @@ enum Animal {
     CAT
     BADGER
     MAMMOTH
+}
+
+type Author {
+    id: Int!
+    name: String
+}
+
+# ---- books ----
+
+type Book {
+    id: Int!
+    title: String
+    isbn: String
+    genre: Genre!
+    author: Author
+}
+
+enum Genre {
+    SCIENCE_FICTION
+    DRAMA
+    ACTION
+    ADVENTURE
+    MYSTERY
+    HORROR
+    TRAVEL
+    YOUTH
+    RELIGION
+    SCIENCE
+    HISTORY
+    DICTIONARY
+    COMIC
+    ART
+    POETRY
+    ENCYCLOPEDIA
+    FANTASY
 }

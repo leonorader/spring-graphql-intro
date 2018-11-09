@@ -1,0 +1,99 @@
+-----------------
+1.0.0 
+-----------------
+{
+  pets {
+    id
+  }
+}
+
+{
+  pets {
+    id,
+    name,
+    age
+  }
+}
+
+-----------------
+1.0.1
+-----------------
+
+{
+  books {
+    id
+  }
+}
+
+{
+  books {
+    id,
+    title,
+    isbn,
+    genre
+  }
+}
+
+{
+  books {
+    id,
+    title,
+    isbn,
+    genre,
+    author {
+      id
+    }
+  }
+}
+
+{
+  books {
+    id,
+    title,
+    isbn,
+    genre,
+    author {
+      id,
+      name
+    }
+  }
+}
+
+query AllTheBooooks {
+  books {
+    title,
+    genre
+  }
+}
+
+-----------------
+1.0.2
+-----------------
+
+{
+  booksByGenre(genre: MYSTERY) {
+    id,
+    title,
+    isbn,
+    genre,
+    author {
+      id,
+      name
+    }
+  }
+}
+
+-----------------
+1.0.3
+-----------------
+
+mutation {
+  addBook(
+    book: {
+    	title: "Booooook",
+    	isbn: "222299922",
+    	genre: SCIENCE,
+    	authorId: 1,
+  	}
+  )
+}

@@ -33,4 +33,8 @@ public class Query implements GraphQLQueryResolver {
         return bookRepository.findAll();
     }
 
+    public List<Book> booksByGenre(Genre genre) {
+        return bookRepository.findByGenre(genre);
+    }
+
 }

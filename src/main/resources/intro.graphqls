@@ -1,6 +1,7 @@
 type Query {
     pets: [Pet]
     books: [Book]
+    booksByGenre(genre: Genre!): [Book]
 }
 
 # ---- pets ----
